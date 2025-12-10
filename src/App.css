@@ -1,0 +1,57 @@
+/* Base styles (desktop-first) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: flex-start; /* start from top */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 400px; /* fixed width for desktop */
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .container {
+    width: 90%; /* almost full screen on mobile */
+    padding: 15px;
+  }
+
+  .task-form {
+    flex-direction: column; /* stack input and button */
+  }
+
+  .task-input {
+    width: 100%;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+  .task-actions {
+    flex-direction: column; /* stack buttons on small screens */
+    gap: 5px;
+  }
+
+  .complete-button,
+  .delete-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
