@@ -1,16 +1,100 @@
-# React + Vite
+React To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React To-Do List app that allows users to add, complete, and delete tasks. Tasks are persisted in localStorage, so they remain after page reloads. The app uses a component-based architecture for maintainable and reusable code.
 
-Currently, two official plugins are available:
+Live Demo: (Add your deployed URL here)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## React Compiler
+Add new tasks dynamically.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Mark tasks as completed or incomplete.
 
-## Expanding the ESLint configuration
+Delete tasks from the list.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tasks persist across browser reloads using localStorage.
+
+Clean and responsive UI with component-based design.
+
+Folder Structure
+react-todo-list/
+│
+├─ node_modules/               # Installed dependencies
+│
+├─ public/                     # Static files
+│   ├─ index.html
+│   └─ favicon.ico
+│
+├─ src/
+│   ├─ components/             # All React components
+│   │   ├─ TaskInput.jsx       # Input field to add new tasks
+│   │   ├─ TaskList.jsx        # Renders list of tasks
+│   │   └─ TaskItem.jsx        # Represents a single task (complete/delete)
+│   │
+│   ├─ App.jsx                 # Main app logic and state management
+│   ├─ App.css                 # Styling for App and components
+│   └─ main.jsx                # React entry point
+│
+├─ .gitignore
+├─ package.json
+├─ package-lock.json
+├─ vite.config.js
+└─ README.md
+
+Component Overview
+
+App.jsx
+
+Manages tasks state and loads/saves tasks from localStorage.
+
+Provides addTask, toggleComplete, and deleteTask functions to children.
+
+TaskInput.jsx
+
+Handles user input for adding tasks.
+
+Calls addTask from App to update state.
+
+TaskList.jsx
+
+Receives tasks as props and renders each TaskItem.
+
+TaskItem.jsx
+
+Displays a single task.
+
+Toggles completion and deletes tasks using functions from App.
+
+Getting Started
+
+Clone the repository:
+
+git clone https://github.com/your-username/react-todo-list.git
+
+
+Navigate to the project folder:
+
+cd react-todo-list
+
+
+Install dependencies:
+
+npm install
+
+
+Start the development server:
+
+npm run dev
+
+
+Open the app in your browser (usually at http://localhost:5173).
+
+Technologies Used
+
+React (Functional Components, Hooks: useState, useEffect)
+
+JavaScript (ES6+)
+
+HTML & CSS
+
+LocalStorage for persistent data
